@@ -12,19 +12,14 @@ app.config["MONGO_URI"] = "mongodb://localhost:27017/nba_db"
 mongo = PyMongo(app)
 CORS(app)
 
-@app.route("/allstandings")
+@app.route("/")
 def index():
+    return(render_template("index.html"))
+
+@app.route("/standings")
+def getstandings():
     data = mongo.db.standings.find({})
-    return json_util.dumps(data)
-
-@app.route("/standings/<season>")
-def standings(season):
-    if season:
-        data = mongo.db.standings.find({"season" : season})
-    else:
-        data = mongo.db.standings.find({})
-    return json_util.dumps(data)
-
+    return(json_util.dumps(data))
 
 if __name__ == "__main__":
     app.run(debug=True)
