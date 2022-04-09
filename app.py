@@ -21,5 +21,14 @@ def getstandings():
     data = mongo.db.standings.find({})
     return(json_util.dumps(data))
 
+@app.route("/players.html")
+def players():
+    return(render_template("players.html"))
+
+@app.route("/player_data")
+def getPlayerData():
+    data = mongo.db.player_data.find({})
+    return(json_util.dumps(data))
+
 if __name__ == "__main__":
     app.run(debug=True)
