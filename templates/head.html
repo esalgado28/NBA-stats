@@ -19,7 +19,7 @@
                 <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="teams.html">Teams Statistics</a>
+                <a class="nav-link" href="teams">Teams Statistics</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="head.html">Head to Head Matchups</a>
@@ -29,36 +29,23 @@
             </li>
         </ul>
     </nav>
-    <nav id="smallScreenNav">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-              Choose Matchup
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="">Matchups</a>
+    <hr>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-2">
+          <div class="well">
+            <h5>Team 1:</h5>
+            <select id="team1" onchange = team1changed(this.value)></select>
+          </div>
+        </div>
+        <div class="col-md-2">
+            <div class="well">
+              <h5>Team 2:</h5>
+              <select id="team2" onchange = team2changed(this.value)></select>
             </div>
         </div>
-    </nav>
-    <nav id="smallScreenNav">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-              Select Team #1
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="">Team #1</a>
-            </div>
-        </div>
-    </nav>
-    <nav id="smallScreenNav">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-              Select Team #2
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="">Team #2</a>
-            </div>
-        </div>
-    </nav>
+    </div>
     <center><footer>
         <p><a href="index.html">Return to Home Page</a>
         <p>&copy;Porject 3 - Group D 2022, Bootcamp!</p>

@@ -3,3 +3,4 @@ d3.json("/standings").then(data =>{
 }
 )
 
+
