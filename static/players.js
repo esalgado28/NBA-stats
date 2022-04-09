@@ -64,7 +64,7 @@ function bubbleChart(season, numPlayers)
             points.push(player[1].pts);
             assists.push(player[1].ast);
 
-            let acc = player[1].fgm/(player[1].fga + player[1].fgm);
+            let acc = player[1].fgm/(player[1].fga);
             acc = Math.round(acc*100);
             accuracy.push(acc);
 
