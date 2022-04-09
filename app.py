@@ -48,5 +48,14 @@ def teamlist():
     data = mongo.db.teamlist.find_one({})
     return(json_util.dumps(data))
 
+@app.route("/head.html")
+def headtohead():
+    return(render_template("head.html"))
+
+@app.route("/headtoheadstats/<team1>/<team2>")
+def matchup(team1, team2):
+    data = mongo.db.h2h.find({"teams":["Atlanta Hawks", "Brooklyn Nets"]})
+    return(json_util.dumps(data))
+
 if __name__ == "__main__":
     app.run(debug=True)
