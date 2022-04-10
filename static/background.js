@@ -10,7 +10,7 @@
       //pauseButton: document.querySelector("#pause"),
       src: [
         {
-          src: "court.mp4",
+          src: "/static/court.mp4",
           type: "video/mp4",
         },
       ],
