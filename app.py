@@ -25,7 +25,7 @@ def getseasons():
     data = mongo.db.standings.find({})
     return (json_util.dumps(data))
 
-@app.route("/players.html")
+@app.route("/players")
 def players():
     return(render_template("players.html"))
 
@@ -34,7 +34,7 @@ def getPlayerData():
     data = mongo.db.player_data.find({})
     return(json_util.dumps(data))
 
-@app.route("/head.html")
+@app.route("/head")
 def head():
     return(render_template("head.html"))
 
@@ -48,9 +48,5 @@ def teamlist():
     data = mongo.db.teamlist.find_one({})
     return(json_util.dumps(data))
 
-@app.route("/head.html")
-def headtohead():
-    return(render_template("head.html"))
-    
 if __name__ == "__main__":
     app.run(debug=True)
