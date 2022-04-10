@@ -16,10 +16,14 @@ CORS(app)
 def index():
     return(render_template("index.html"))
 
-@app.route("/standings")
-def getstandings():
+@app.route("/teams")
+def season():
+    return (render_template("teams.html"))
+
+@app.route("/teamsstats")
+def getseasons():
     data = mongo.db.standings.find({})
-    return(json_util.dumps(data))
+    return (json_util.dumps(data))
 
 @app.route("/players.html")
 def players():
@@ -30,5 +34,23 @@ def getPlayerData():
     data = mongo.db.player_data.find({})
     return(json_util.dumps(data))
 
+@app.route("/head.html")
+def head():
+    return(render_template("head.html"))
+
+@app.route("/headtoheadstats/<team1>/<team2>")
+def matchup(team1, team2):
+    data = mongo.db.h2h.find_one({"teams": { "$all" : [team1, team2]}})
+    return(json_util.dumps(data))
+
+@app.route("/teamlist")
+def teamlist():
+    data = mongo.db.teamlist.find_one({})
+    return(json_util.dumps(data))
+
+@app.route("/head.html")
+def headtohead():
+    return(render_template("head.html"))
+    
 if __name__ == "__main__":
     app.run(debug=True)
