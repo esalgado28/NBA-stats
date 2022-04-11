@@ -15,28 +15,26 @@
             margin: 0; padding: 0;
         }
 
+        nav {
+            background-color: rgba(0,0,0,0.7);
+        }
+
         html, body {
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
 
-        #nav_container {
-            margin: 10px;
-            padding: 10px;
-            background-color: aliceblue;
-        }
-
         #main_content {
             margin: 20px;
-            border-radius: 10px;
-            padding: 10px;
-            background-color: rgba(250,235,215,0.5);
+            border-radius: 20px;
+            padding: 20px;
+            background-color: rgba(250,235,215,0.6);
         }
 
         #container {
             z-index: -1;
-            overflow: hidden;
+            overflow: auto;
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
         }   
@@ -60,33 +58,54 @@
             background-size: cover;
             background-position: center;
         }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
     </style>
 
 </head>
 <body>
     <!-- bootstrap navigations -->
-    <nav id="navigationlist nav_container">
+    <nav id="navigationlist">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link active" href="index">Home</a>
+                <a class="nav-link active" href="index"><b>Home</b></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="teams">Teams Statistics</a>
+                <a class="nav-link" href="teams"><b>Teams Statistics</b></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="head.html">Head to Head Matchups</a>
+                <a class="nav-link" href="head"><b>Head to Head Matchups</b></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="players.html">Top Players</a>
+                <a class="nav-link" href="players"><b>Top Players</b></a>
             </li>
         </ul>
-    <hr>
+    </nav>
+    <br>
     <div id="main_content">
-      <center>  
-        <h1>Project Description Here</h1>
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-        
-        
+       
+        <h1>Dashboard Description</h1>
+        <h4>The objective of this project is to build interactive web visualization in the form of dashboard powered by a dataset. Our dashboard focus is on NBA Statistics, specifically the data on individual teams, team comparisons, and individual players.
+            <br><br>Our dashboard allows the user an interactive way to look up and explore:
+            <br>
+            <br>
+        <li>
+            3 NBA seasons (2019, 2020, and 2021) data
+        </li>
+        <li>30 teams’ wins and loses divided into western and eastern conferences</li>
+        <li>Player stats: names, assists, points, field goal attempts, field goals made, free throw attempts, free throws made, and total games for seasons 1985-2021</li>
+        <br><br>
+        For more details visit our <a href="https://github.com/esalgado28/project-3">GitHub</a>.</h4>
+      <hr>  
+      <center> 
         <footer>
             <p>&copy; Project 3 - Group D 2022, Bootcamp!</p>
         </footer>
@@ -99,8 +118,8 @@
     <div id="container">
         <video id="background_video" loop muted></video>
         <div id="video_cover"></div>
+        <div id="overlay"></div>
     </div>
-
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
