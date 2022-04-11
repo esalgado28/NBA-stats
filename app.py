@@ -48,9 +48,5 @@ def teamlist():
     data = mongo.db.teamlist.find_one({})
     return(json_util.dumps(data))
 
-@app.route("/head")
-def headtohead():
-    return(render_template("head.html"))
-    
 if __name__ == "__main__":
     app.run(debug=True)
