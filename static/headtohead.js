@@ -27,39 +27,49 @@ function plotdata(firstteam, secondteam) {
         //console.log(data.data[0].away.score);
         //do plot stuff here
         let dates=[]
-        let awayteam=[]
-        let awayteamscore=[]
-        let hometeam=[]
-        let hometeamscore=[]
-
+        let team1=[]
+        let team1ha = []
+        let team2=[]
+        let team2ha = []
         for(let i=0; i<data.data.length; i++)
             {
                 //get data for each game played for both teams
                 row=data.data[i];
                 dates.push(row.date);
-                awayteam.push(row.away.team);
-                awayteamscore.push(row.away.score);
-                hometeam.push(row.home.team);
-                hometeamscore.push(row.home.score);
+                if (row.away.team == firstteam) {
+                    team1.push(row.away.score);
+                    team1ha.push("Away");
+                    team2.push(row.home.score);
+                    team2ha.push("Home")
+                } else {
+                    team1.push(row.away.score);
+                    team1ha.push("Home");
+                    team2.push(row.home.score);
+                    team2ha.push("Away")
+                }
                 //print all of game data for both teams
                 console.log(data.data[i])
             };
         //trace1 for away team
         let awayteamtrace= {
-            x:dates,
-            y:awayteamscore,
-            text: awayteam,
-            name: "Away Results",
+            x: dates,
+            y: team1,
+            text: team1ha,
+            name: firstteam,
+            textposition: 'auto',
+            hoverinfo: team1,
             type: "bar"
 
         }; 
 
         //trace2 for home team
         let hometeamtrace={
-            x:dates,
-            y:hometeamscore,
-            text: hometeam,
-            name: "Home Results",
+            x: dates,
+            y:team2,
+            text: team2ha,
+            name: secondteam,
+            textposition: 'auto',
+            hoverinfo: team2,
             type: "bar"
 
 
@@ -69,7 +79,8 @@ function plotdata(firstteam, secondteam) {
         let barChart = [awayteamtrace, hometeamtrace];
 
         let layout={
-            title: "Head to Head Results for 2020-2021 Season"
+            title: "Head to Head Results for 2020-2021 Season",
+            xaxis: {type: 'category', tickformat : '%B %d, %Y',}
         };
 
         Plotly.newPlot("bar", barChart, layout);
