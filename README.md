@@ -12,7 +12,7 @@ Data was gathered from the following sources:
 - https://api-sports.io/documentation/basketball/v1 
 - https://www.balldontlie.io/#get-all-stats
 
-Using python with requests and pymongo libraries, the api's were called and the data was transfered to MongoDB. Check `APIBuilder.ipynb` and `player_stats.API.ipynb`.
+Using python with requests and pymongo libraries, the api's were called and the data was transfered to MongoDB. Check `APIBuilder.ipynb` and `player_stats_API.ipynb`.
 
 ### Dashboard
 Our dashboard is powered using Flask API. Our server successfully connects to MongoDB to retrieve and feed the data to power our visualizations. See `app.py`.
