@@ -6,8 +6,8 @@
       resize: true,
       autoplay: true, // true is default
       isMobile: window.matchMedia("(max-width: 768px)").matches,
-      //playButton: document.querySelector("#play"),
-      //pauseButton: document.querySelector("#pause"),
+      playButton: document.querySelector("#play"),
+      pauseButton: document.querySelector("#pause"),
       src: [
         {
           src: "/static/court.mp4",
