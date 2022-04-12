@@ -13,7 +13,7 @@
         
         <style>
             body { 
-                background-image: url({{ url_for('static', filename='/images/basketball-court2.jpeg') }});
+                background-image: url({{url_for('static', filename='/images/basketball-court2.jpeg')}});
                 /* background-color: whitesmoke; */
                 background-size: cover;
                 background-position: center;
@@ -21,13 +21,14 @@
                 height: 100vh;
                 z-index: 2;
             }
-            .nav-item {
-                background-color: #061C31;
-                font: bold;  
+            nav {
+                background-color: #061c31;
             }
-            .nav-item:hover{
-                font-weight: bold;  
+
+            .nav-link {
+                font-weight: bold;
             }
+
             #selDataset {
                 font-weight: bold;
             }
@@ -66,8 +67,8 @@
                     <a class="nav-link" href="/players">Top Players</a>
                 </li>
             </ul>
-            <br>
-        </nav>
+        </nav>    
+        <br>
         <div class="container">
             <div class="row">
                 <div class="well">
@@ -128,9 +129,9 @@
             <p>&copy;Project 3 - Group D 2022, Bootcamp!</p>
             </footer>
         </center>
-        <div id="container">
+        <!-- <div id="container">
             <div id="video_cover"></div>
-        </div>
+        </div> -->
 
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
