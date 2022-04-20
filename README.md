@@ -21,7 +21,7 @@ We used JavaScript along with the Plot.ly and D3 libraries to create our interac
 
 Part of the challenge was to also use a new JS library so we utilized [bideo.js](https://github.com/rishabhp/bideo.js) to add a background video to our homepage.
 
-Finally, you we deployed our page using herokuapp:  [NBA Stats](https://gtbootcampnbastats.herokuapp.com/)
+Finally, we deployed our page using herokuapp:  [NBA Stats](https://gtbootcampnbastats.herokuapp.com/)
 
 ![image](static/images/page1.jpg)
 
