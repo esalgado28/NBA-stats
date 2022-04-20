@@ -2,6 +2,6 @@ gunicorn
 flask
 flask_cors
 bs4
-pymongo
+flask_pymongo
 dnspython
 bson
