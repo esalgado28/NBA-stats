@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Create connection variable
-app.config["MONGO_URI"] = "mongodb://localhost:27017/nba_db"
+app.config['MONGO_CONNECT'] = False
 mongo = PyMongo(app)
 CORS(app)
 
