@@ -4,4 +4,4 @@ flask_cors
 bs4
 flask_pymongo
 dnspython
-bson.json_util
+bson
