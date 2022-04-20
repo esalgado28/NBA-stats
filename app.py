@@ -12,7 +12,7 @@ app.config["MONGO_URI"] = "mongodb://localhost:27017/nba_db"
 mongo = PyMongo(app)
 CORS(app)
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
     return(render_template("index.html"))
 
